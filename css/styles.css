@@ -78,6 +78,7 @@ body {
 .header {
   margin: 0 auto;
   border-bottom: 1px solid var(--modal-background);
+  box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
 .header-container {
@@ -123,7 +124,7 @@ body {
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
-  color: var(--dark);
+  color: var(--pressed-state);
   display: block;
   padding: 24px 0;
   transition: color var(--animation);
@@ -227,7 +228,7 @@ body {
   padding: 16px 32px;
   margin: 0 auto;
   display: block;
-  transition: background var(--animation);
+  transition: background-color var(--animation);
 }
 
 .hero-btn:hover,
@@ -249,6 +250,8 @@ body {
 }
 
 .benefits-item {}
+
+.benefits-icon-box{}
 
 .benefits-icon {
   display: flex;
@@ -340,7 +343,7 @@ body {
 
 .container-team-text {
   text-align: center;
-  padding: 32px 16px;
+  padding: 32px 0px;
  
 }
 
@@ -423,7 +426,9 @@ color: var(--primary-brand);
  transition : fill var(--animation);
 }
 
-.customers-link:hover {
+.customers-link:hover,
+.customers-link:focus {
+  color: var(--pressed-state);
   border-color: var(--pressed-state);
 }
 .customers-link:hover .customers-icon{
@@ -438,6 +443,7 @@ color: var(--primary-brand);
 }
 .footer-container{
  display: flex;
+ align-items: baseline;
 }
 
 .footer-logo-link {
@@ -460,53 +466,69 @@ color: var(--primary-brand);
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
-  color: var(--light);
+  color: var(--white-background);
   width: 264px;
+  margin-bottom: 16px;
 }
 
-.text-container{
-  display: block;
+/* .text-container{ */
+  /* display: block;
   width: 264px;
   height: 112px;
   margin-right: 120px;
+} */
+
+.text-container {
+  margin-right: 120px
 }
 
-.media-container{
+/* .media-container{
   display: block;
   width: 208px;
   height: 80px; 
-}
+} */
 
-.media{
+.media-container {}
+
+.media-text {
   font-weight: 500;
-  margin-bottom: 8px;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: var(--white-background);
+  margin-bottom: 16px;
 }
 
-.icon-media-list{
+.icon-media-list {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  list-style: none;
   gap: 16px;
-  
 }
 
-.icon-item{}
+.icon-item {
+  width: 40px;
+  height: 40px;
+}
 
-.footer-media-link{
-  height: 100%;
+.footer-media-link {
   width: 100%;
-  color: var(--primary-brand);
-}
-.footer-icon{
-  /* fill: var(--primary-brand); */
-  fill: currentColor;
-  transition: fill var(--animation);
+  height: 100%;
+  background-color: var(--primary-brand);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color var(--animation);
 }
 
-.footer-icon:hover {
-  fill: var(--green);
+.footer-media-link:hover ,
+.footer-media-link:focus {
+  background-color: var(--green);
 }
+
+.footer-icon {
+  fill: var(--light);
+}
+
 /* Portfolio main*/
 
 .main-portfolio {
@@ -557,7 +579,10 @@ color: var(--primary-brand);
   color: var(--primary-brand);
   cursor: pointer;
   padding: 12px 24px;
-  transition: border var(--animation), color var(--animation), background var(--animation), box-shaddow var(--animation);
+  transition: color var(--animation),
+  background-color var(--animation),
+  border-color var(--animation),
+  box-shadow var(--animation),
 }
 
 .portfolio-btn:hover,
@@ -593,9 +618,13 @@ color: var(--primary-brand);
 }
 
 .portfolio-link {
-  padding: 0;
-  margin: 0;
+  display: block;
+  transition: box-shadow var(--animation);
   transition: transform var(--animation);
+}
+
+.portfolio-link:hover{
+box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
 .portfolio-img {}
@@ -620,7 +649,7 @@ color: var(--primary-brand);
   transition: transform var(--animation);
 
   background: var(--primary-brand);
-  padding: 40px 32px 164px 32px;
+  padding: 40px 32px;
 
   font-size: 16px;
   line-height: 1.5;
