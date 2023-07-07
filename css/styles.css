@@ -124,7 +124,7 @@ body {
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
-  color: var(--pressed-state);
+  color: var(--dark);
   display: block;
   padding: 24px 0;
   transition: color var(--animation);
@@ -139,9 +139,13 @@ body {
   display: block;
   width: 100%;
   height: 4px;
-  background-color: var(--pressed-state);
+  color: var(--pressed-state);
   border-radius: 2px;
 }
+.header-link.active{
+  color: var(--pressed-state);
+}
+
 .header-link:hover,
 .header-link:focus {
   color: var(--pressed-state);
@@ -248,7 +252,9 @@ body {
   gap: 24px;
 }
 
-.benefits-item {}
+.benefits-item {
+  width: calc((100%-3*24px)/4);
+}
 
 .benefits-icon-box{
   display: flex;
@@ -259,11 +265,8 @@ body {
   border-radius: 4px;
   margin-bottom: 8px;
 }
-/* 
-.benefits-icon {
-  width: 264px;
-  padding: 24px 100px;
-  } */
+
+.benefits-icon {}
 
 .benefits-title {
   font-weight: 500;
@@ -271,7 +274,6 @@ body {
   line-height: 1.2;
   letter-spacing: 0.02em;
   color: var(--dark);
-  margin-top: 8px;
   margin-bottom: 8px;
 }
 
@@ -436,7 +438,6 @@ body {
 
 .customers-icon{
  fill: currentColor;
- transition : fill var(--animation);
 }
 
 
@@ -473,7 +474,6 @@ body {
   letter-spacing: 0.02em;
   color: var(--white-background);
   width: 264px;
-  margin-bottom: 16px;
 }
 
 /* .text-container{ */
@@ -608,26 +608,23 @@ body {
 }
 
 .portfolio-item{
-  position: relative;
   width: calc((100% - 48px) / 3);
-  min-width: 360px;
- transition: box-shaddow var(--animation);
- overflow: hidden;
 }
 
-.portfolio-item:hover,
-.portfolio-item:focus {
-  box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08),
-    0px 1px 1px 0px rgba(46, 47, 66, 0.16),
-    0px 1px 6px 0px rgba(46, 47, 66, 0.08);
-}
+.portfolio-:hover,
+.portfolio-:focus {}
 
 .portfolio-link {
   display: block;
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
+    position: relative;
+    min-width: 360px;
+    transition: box-shaddow var(--animation);
+    overflow: hidden;
+    }
 
-.portfolio-link:hover{
+.portfolio-link:hover,
+.portfolio-link:focus {
 box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
@@ -726,28 +723,29 @@ box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.1
   width: 24px;
   height: 24px;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  padding: 0;
   border-radius: 50%;
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: var(--modal-background);
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
- 
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1); 
 }
 
 .modal-btn:hover,
 .modal-btn:focus {
   background-color: var(--pressed-state);
-  border: none;
-  fill: var(--white-background);
+  fill: var(--modal-background);
 }
 
 .modal-icon {
   stroke: var(--dark);
-  border-radius: 24px;
-  border: 1px solid rgba(0, 0, 0, 0.10);
-  /*background: var(--modal-background);  */
-  padding: 8px;
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  margin: 8px;
+  border: none;
+  /* transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1); */
+
+}
+
+.modal-icon:hover{
+  stroke: var(--white-background); 
 }
